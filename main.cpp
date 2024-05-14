@@ -1,29 +1,21 @@
-#include <algorithm>
-#include <cmath>
 #include <iostream>
-#include <set>
-#include <stack>
+#include <fstream>
 #include <string>
-#include <vector>
-#include <unordered_map>
-#include <unordered_set>
-
 using namespace std;
-using ill = int long long;
-using vi = vector<int long long>;
-
-
-void solve() {
-
-}
-
-signed main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
-    int t = 1;
-    //cin >> t;
-    while (t--) {
-        solve();
+int main(int argc, char* argv[]) {
+    if (argc != 2) {
+        cout << "Error! Usage: task.exe <filename>" << endl;
+        return 1;
     }
+    string filename = argv[1];
+    ifstream file(filename);
+    string str;
+    if (!file.is_open()) {
+        cout << "Error! File is not found" << endl;
+        return 2;
+    }
+    while (getline(file, str)) {
+        cout << str << endl;
+    }
+    return 0;
 }
