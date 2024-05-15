@@ -9,6 +9,7 @@ int main(int argc, char* argv[]) {
         cout << "Error! Usage: task.exe <filename>" << endl;
         return 1;
     }
+
     string filename = argv[1];
     ifstream file(filename);
     string str;
@@ -19,5 +20,7 @@ int main(int argc, char* argv[]) {
     while (getline(file, str)) {
         cout << str << endl;
     }
+    Time ex(10, 2);
+    cout << ex.toMinutes() << endl;
     return 0;
 }
