@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "time.hpp"
+#include "club.hpp"
 using namespace std;
 int main(int argc, char* argv[]) {
     if (argc != 2) {
