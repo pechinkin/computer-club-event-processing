@@ -4,13 +4,13 @@ CXXFLAGS = -std=c++20 -Iinclude
 SRCS = main.cpp src/time.cpp src/club.cpp
 OBJS = ${SRCS:.cpp=.o}
 
-all: yadro_test
+all: test clean
 
-yadro_test: ${OBJS}
+test: ${OBJS}
 	${CXX} ${CXXFLAGS} -o $@ $^
 
 %.o: %.cpp
 	${CXX} ${CXXFLAGS} -c -o $@ $<
 
 clean:
-	rm -f ${OBJS} test
+	rm -f ${OBJS}
