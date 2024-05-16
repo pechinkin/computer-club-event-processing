@@ -22,7 +22,7 @@ Time Time::operator-(Time& other) {
     return Time(h, m);
 }
 
-Time& Time::operator+=( Time& other) {
+Time& Time::operator+=(Time& other) {
     minutes += other.minutes;
     hours += other.hours + minutes / 60;
     minutes %= 60;

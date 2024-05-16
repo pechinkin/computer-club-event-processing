@@ -12,7 +12,7 @@ struct Time {
     bool operator>=(Time& other);
     bool operator<(Time& other);
     Time operator-(Time& other);
-    Time& operator+=( Time& other);
+    Time& operator+=(Time& other);
 
     friend std::ostream& operator<<(std::ostream& os, Time time);
 

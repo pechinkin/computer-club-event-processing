@@ -11,7 +11,6 @@ int main(int argc, char* argv[]) {
         cout << "Error! Usage: task.exe <filename>" << endl;
         return 1;
     }
-
     string filename = argv[1];
     ifstream file(filename);
     string str;
@@ -19,15 +18,24 @@ int main(int argc, char* argv[]) {
         cout << "Error! File is not found" << endl;
         return 2;
     }
-    while (getline(file, str)) {
-        cout << str << endl;
-    }
+//    while (getline(file, str)) {
+//        cout << str << endl;
+//    }
+
     Time ex1(10, 2);
-    Time ex2(10, 3);
-    cout << (ex1 - ex1) << endl;
-    Table x;
-    if (!x.take_me(ex1)) cout << "oops" << endl;
-    if (!x.leave_me(ex2)) cout << "it was free" << endl;
-    cout << x.time_used() << endl;
+    Time ex2(10, 5);
+    Time ex3(10, 3);
+    Time ex4(10, 4);
+    int n = 2, p = 2;
+    string c1 = "client1", c2 = "client2", c3 = "client3", c4 = "client4";
+    Club c(n, p, ex1, ex2);
+    c.come(c1, ex3);
+    c.come(c2, ex4);
+    c.come(c3, ex1);
+    c.come(c4, ex2);
+    int x1 = 0, x2 = 1;
+    c.sit(c1, ex3, x1);
+    c.sit(c2, ex4, x2);
+    c.print();
     return 0;
 }

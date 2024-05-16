@@ -7,14 +7,15 @@ using namespace std;
 
 class Table {
 private:
-    bool is_taken;
+    bool taken;
     Time taken_at;
     vector<Time> taken_time;
 public:
+    bool is_taken();
     int taken_hours();
     Time time_used();
-    bool take_me(Time t);
-    bool leave_me(Time t);
+    void take_me(Time t);
+    void leave_me(Time t);
     Table();
 };
 #endif
