@@ -3,12 +3,20 @@
 
 using namespace std;
 
+Table::Table(): taken_at(Time(0, 0)), is_taken(false) {};
+
 int Table::taken_hours() {
     int ans = 0;
     for (Time &el : taken_time) {
         ans += el.hours;
         ans += el.minutes > 0;
     }
+    return ans;
+};
+
+Time Table::time_used() {
+    Time ans(0, 0);
+    for (Time &el : taken_time) ans += el;
     return ans;
 };
 

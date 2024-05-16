@@ -24,7 +24,10 @@ int main(int argc, char* argv[]) {
     }
     Time ex1(10, 2);
     Time ex2(10, 3);
-    Time ex3 = ex2 - ex1;
-    cout << ex3 << endl;
+    cout << (ex1 - ex1) << endl;
+    Table x;
+    if (!x.take_me(ex1)) cout << "oops" << endl;
+    if (!x.leave_me(ex2)) cout << "it was free" << endl;
+    cout << x.time_used() << endl;
     return 0;
 }

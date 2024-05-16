@@ -16,12 +16,20 @@ bool Time::operator<(Time& other) {
 
 Time Time::operator-(Time& other) {
     int totalMinutes = toMinutes() - other.toMinutes();
+    if (totalMinutes < 0) throw invalid_argument("second is larger");
     int h = totalMinutes / 60;
     int m = totalMinutes % 60;
     return Time(h, m);
 }
 
-ostream& operator<<(ostream& os, Time& time) {
+Time& Time::operator+=( Time& other) {
+    minutes += other.minutes;
+    hours += other.hours + minutes / 60;
+    minutes %= 60;
+    return *this;
+}
+
+ostream& operator<<(ostream& os, Time time) {
     string h, m;
     h += time.hours / 10 + '0';
     h += time.hours % 10 + '0';

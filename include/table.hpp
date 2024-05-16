@@ -12,7 +12,9 @@ private:
     vector<Time> taken_time;
 public:
     int taken_hours();
+    Time time_used();
     bool take_me(Time t);
     bool leave_me(Time t);
+    Table();
 };
 #endif
