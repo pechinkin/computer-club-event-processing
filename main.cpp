@@ -3,8 +3,8 @@
 #include <fstream>
 #include <string>
 #include <time.hpp>
+#include <table.hpp>
 #include <club.hpp>
-#include <event.hpp>
 using namespace std;
 int main(int argc, char* argv[]) {
     if (argc != 2) {
@@ -22,8 +22,9 @@ int main(int argc, char* argv[]) {
     while (getline(file, str)) {
         cout << str << endl;
     }
-    Time ex(10, 2);
-    Event m(ex, "FREE");
-    cout << ex.toMinutes() << endl;
+    Time ex1(10, 2);
+    Time ex2(10, 3);
+    Time ex3 = ex2 - ex1;
+    cout << ex3 << endl;
     return 0;
 }

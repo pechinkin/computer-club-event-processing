@@ -1,0 +1,18 @@
+#ifndef TABLE_HPP
+#define TABLE_HPP
+#include <vector>
+#include <time.hpp>
+
+using namespace std;
+
+class Table {
+private:
+    bool is_taken;
+    Time taken_at;
+    vector<Time> taken_time;
+public:
+    int taken_hours();
+    bool take_me(Time t);
+    bool leave_me(Time t);
+};
+#endif
