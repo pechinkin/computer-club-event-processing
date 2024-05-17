@@ -118,6 +118,3 @@ void Club::print() {
         cout << i + 1 << ' ' << tables[i].taken_hours() * price << ' ' << tables[i].time_used() << endl;
     }
 };
-
-void Club::dump() {
-};

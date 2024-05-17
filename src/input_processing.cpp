@@ -68,22 +68,25 @@ void input_processing(istream& in) {
     possible_chars.insert('-');
 
     while (getline(in, str)) {
-
         cout << str << endl;
         if (str.size() < 9) return;
+
         if (str[2] != ':') return;
         for (int &i: int_pos_short) if (str[i] < '0' || str[i] > '9') return;
         int hours = stoi(str.substr(0, 2));
         int minutes = stoi(str.substr(3, 2));
         if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) return;
         Time time(hours, minutes);
+
         if (str[5] != ' ' || str[7] != ' ') return;
         if (str[6] < '1' || str[6] > '4') return;
         int action = str[6] - '0';
+
         string username;
         int table;
         int i = 8;
         while (i < str.size() && possible_chars.count(str[i])) username += str[i++];
+
         if (action != 2) {
             if (i < str.size()) return;
         } else {
@@ -93,6 +96,7 @@ void input_processing(istream& in) {
             table = stoi(table_str) - 1;
             if (table < 0 || table > table_nums) return;
         }
+
         switch (action) {
             case 1:
                 club.come(username, time);

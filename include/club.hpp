@@ -29,7 +29,5 @@ public:
     void print();
     Club() = delete;
     Club(int &n, int &p, Time &o_t, Time &c_t);
-
-    void dump();
 };
 #endif
