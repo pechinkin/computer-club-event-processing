@@ -45,7 +45,7 @@ void Club::sit(string& username, Time& t, int& table_number) {
         cout << t << " 13 PlaceIsBusy" << endl;
         return;
     }
-    //учесть случай, когда пересаживаемся с другого компа - этот освобождаем
+    if (visitors[username] >= 0) tables[visitors[username]].leave_me(t);
     visitors[username] = table_number;
     tables[table_number].take_me(t);
     cout << t << " 12 " << username << ' ' << table_number << endl;

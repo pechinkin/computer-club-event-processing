@@ -13,7 +13,7 @@ private:
     Time open_at;
     Time close_at;
     vector<Table> tables;
-    unordered_map<string, int> visitors; // 0...N - comp number, -1 - in queue, -2 - just came
+    unordered_map<string, int> visitors; // 0...N - comp number, -1 - in queue, -2 - just came, -3 - already left
     queue<string> q;
     bool is_inside(string& username);
     bool is_opened(Time& t);
