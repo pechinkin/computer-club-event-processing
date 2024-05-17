@@ -48,7 +48,6 @@ void Club::sit(string& username, Time& t, int& table_number) {
     if (visitors[username] >= 0) tables[visitors[username]].leave_me(t);
     visitors[username] = table_number;
     tables[table_number].take_me(t);
-    cout << t << " 12 " << username << ' ' << table_number << endl;
 };
 
 void Club::wait(string& username, Time& t) {
@@ -64,7 +63,7 @@ void Club::wait(string& username, Time& t) {
     }
     if (is_queue_full()) {
         cout << t << " 11 " << username << endl;
-        visitors.erase(username);
+        visitors[username] = -2;
         return;
     }
     visitors[username] = -1;
@@ -91,7 +90,7 @@ void Club::gone(string& username, Time& t) {
             visitors[q.front()] = table_number;
             q.pop();
             tables[table_number].take_me(t);
-            cout << t << " 12 " << username << ' ' << table_number << endl;
+            cout << t << " 12 " << username << ' ' << table_number + 1<< endl;
         }
     }
     visitors[username] = -3;
@@ -118,4 +117,7 @@ void Club::print() {
     for (int i = 0; i < tables.size(); ++i) {
         cout << i + 1 << ' ' << tables[i].taken_hours() * price << ' ' << tables[i].time_used() << endl;
     }
+};
+
+void Club::dump() {
 };
