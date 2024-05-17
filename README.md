@@ -2,17 +2,17 @@
 
 ### Intro
 
-This is a programm on `C++` to process events happening in the computer center. Here i use STL-containers and onle standard library. You can count money you earned during the day and time when PC/table was taken (precised to minutes, but money is counted for table as every period of being taken rounds high to amout of hours. Examples:
+This is a programm on `C++` to process events happening in the computer center. Here i use STL-containers and only standard library. You can count money you earned during the day and time when PC/table was taken (precised to minutes, but money is counted for table as every period of being taken rounds high to amout of hours. Examples:
 3 minutes = 1 hour paid for;
 01:01 = 2 hours paid for;
 that is how market economy works, mate)
 
 ### How to create a file to process
 
-Info for processing is stores in .txt file. Open it and write in appropriate way:
+Info for processing is stored in .txt file. Open it and write in appropriate way:
 ```
 N //N - number of working tables, N >= 0
-Time_opening Time_ending //format - HH:MM, like 17:03, 19:84
+Time_opening Time_ending //format - HH:MM, like 17:03, 09:14
 P //P - price for an hour
 [events]
 ```
@@ -51,7 +51,7 @@ Example (like in `input.txt`):
     - 2.1 `ID = 11` Client went away (in the end of the day in alphabetic order or in case when queue is full already)
     - 2.2  `ID = 12` Some of the tables became free and first user in the queue sat there
     - 2.3 `ID = 13` Any mistake found, which doesn't have an impact on processing events:
-    - - `ClientUnknown` - when client hadn't come but wants to sit / wait / go away
+    - - `ClientUnknown` - when client hasn't come yet but wants to sit / wait / go away
     - - `YouShallNotPass` - when client is already inside and tries to come once more. strange one, this guy
     - - `ICanWaiNoLonger` - when client wants to wait when some of tables are free. strange one, too
     - - `PlaceIsBusy` - when client wants to take a sit, but it is already taken
