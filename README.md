@@ -57,13 +57,7 @@ Example (like in `input.txt`):
     - - `PlaceIsBusy` - when client wants to take a sit, but it is already taken
 
 ### Usage
-- with `make`
-open terminal in folder with project and type:
-```
-make
-./test input.txt
-```
-- with CMake:
+You can build a programm with CMake:
 ```
 mkdir build
 cp input.txt  build
